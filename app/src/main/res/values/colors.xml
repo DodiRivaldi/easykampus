@@ -5,6 +5,7 @@
     <color name="textColorPrimary">#FFFFFF</color>
     <color name="windowBackground">#FFFFFF</color>
     <color name="navigationBarColor">#000000</color>
-    <color name="colorAccent">#2d7fbc</color>
-
+    <color name="colorAccent">#FFFFFF</color>
+    <color name="colorKuning">#f2fe71</color>
+    <color name="white">#ffffff</color>
 </resources>

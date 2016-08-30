@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "641625415184",
+    "firebase_url": "https://easykampus-78af9.firebaseio.com",
+    "project_id": "easykampus-78af9",
+    "storage_bucket": "easykampus-78af9.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:641625415184:android:786f91d3e99533b4",
+        "android_client_info": {
+          "package_name": "com.kampusdeveloper.easykampus"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "641625415184-4er7a7ij20o0vc3n58saghm5k8mfbj25.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.kampusdeveloper.easykampus",
+            "certificate_hash": "A23F0DC1718DF010DB5663C58838A648175AE866"
+          }
+        },
+        {
+          "client_id": "641625415184-m2fngle6ufi9u9eod78ofscbi92f8rrq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCBTeCvH7nzxYHwkTF-Vtidn92vzp0EBY8"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "641625415184-m2fngle6ufi9u9eod78ofscbi92f8rrq.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
