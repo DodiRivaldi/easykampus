@@ -9,7 +9,9 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.ShareActionProvider;
 import android.support.v7.widget.Toolbar;
+import android.text.Html;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -28,17 +30,19 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
     private Toolbar toolbar;
-    private ProgressBar progressBar;
     private TabLayout tabLayout;
     private ViewPager viewPager;
+    private FirebaseAuth.AuthStateListener authListener;
+    private FirebaseAuth auth;
+    private ProgressBar progressBar;
+    private ShareActionProvider mShareActionProvider;
     private int[] tabIcons = {
             R.drawable.ic_near_me_white_24dp,
             R.drawable.ic_phone_white_24dp,
             R.drawable.ic_account_circle_white_24dp
     };
 
-    private FirebaseAuth.AuthStateListener authListener;
-    private FirebaseAuth auth;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -68,7 +72,6 @@ public class MainActivity extends AppCompatActivity {
                     // user auth state is changed - user is null
                     // launch login activity
                     startActivity(new Intent(MainActivity.this, Login.class));
-                    finish();
                 }
             }
         };
@@ -88,13 +91,26 @@ public class MainActivity extends AppCompatActivity {
         return true;
     }
 
+    private void setShareIntent(Intent shareIntent) {
+        if (mShareActionProvider != null) {
+            mShareActionProvider.setShareIntent(shareIntent);
+        }
+    }
+
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             // action with ID action_refresh was selected
+            case R.id.action_akun :
+                auth.signOut();
+                startActivity(new Intent(MainActivity.this, Login.class));
+                break;
+
             case R.id.action_refresh:
-                Toast.makeText(this, "Bagikan", Toast.LENGTH_SHORT)
-                        .show();
+                Intent sharingIntent = new Intent(Intent.ACTION_SEND);
+                sharingIntent.setType("text/html");
+                sharingIntent.putExtra(android.content.Intent.EXTRA_TEXT, Html.fromHtml("<p>This is the text that will be shared.</p>"));
+                startActivity(Intent.createChooser(sharingIntent,"Share using"));
                 break;
             // action with ID action_settings was selected
             case R.id.action_settings:
@@ -152,12 +168,6 @@ public class MainActivity extends AppCompatActivity {
     }
 
     @Override
-    protected void onResume() {
-        super.onResume();
-        progressBar.setVisibility(View.GONE);
-    }
-
-    @Override
     public void onStart() {
         super.onStart();
         auth.addAuthStateListener(authListener);
@@ -170,4 +180,5 @@ public class MainActivity extends AppCompatActivity {
             auth.removeAuthStateListener(authListener);
         }
     }
+
 }

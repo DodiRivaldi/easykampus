@@ -39,7 +39,7 @@ public class CustomListAdapter extends ArrayAdapter<String> {
         TextView extratxt = (TextView) rowView.findViewById(R.id.tv_nomor);
 
         txtTitle.setText(itemname[position]);
-        //imageView.setImageResource(imgid[position]);
+        imageView.setImageResource(imgid[position]);
         extratxt.setText(telp[position]);
         return rowView;
 

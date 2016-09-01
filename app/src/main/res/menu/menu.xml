@@ -1,11 +1,11 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android" >
-
     <item
         android:id="@+id/action_refresh"
         android:title="Bagikan"/>
     <item
         android:id="@+id/action_settings"
-        android:title="Tentang">
-    </item>
-
+        android:title="Tentang"/>
+    <item
+        android:id="@+id/action_akun"
+        android:title="Logout"/>
 </menu>
