@@ -21,7 +21,7 @@ import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
-import com.kampusdeveloper.easykampus.fragment.Akun;
+import com.kampusdeveloper.easykampus.fragment.Ulasan;
 import com.kampusdeveloper.easykampus.fragment.Kontak;
 import com.kampusdeveloper.easykampus.fragment.News;
 
@@ -39,7 +39,7 @@ public class MainActivity extends AppCompatActivity {
     private int[] tabIcons = {
             R.drawable.ic_near_me_white_24dp,
             R.drawable.ic_phone_white_24dp,
-            R.drawable.ic_account_circle_white_24dp
+            R.drawable.ic_star_rate
     };
 
 
@@ -134,7 +134,7 @@ public class MainActivity extends AppCompatActivity {
         ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager());
         adapter.addFrag(new News(), "Update");
         adapter.addFrag(new Kontak(), "Kontak");
-        adapter.addFrag(new Akun(), "Akun");
+        adapter.addFrag(new Ulasan(), "Ulasan");
         viewPager.setAdapter(adapter);
     }
 
