@@ -1,11 +1,23 @@
-<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".MainActivity">
+
     <item
         android:id="@+id/action_refresh"
-        android:title="Bagikan"/>
+        android:title="Bagikan"
+        android:icon="@drawable/ic_share"
+        app:showAsAction="ifRoom"
+        android:orderInCategory="100"
+        android:actionProviderClass=
+            "android.widget.ShareActionProvider"
+        ></item>
+
     <item
         android:id="@+id/action_settings"
         android:title="Tentang"/>
     <item
         android:id="@+id/action_akun"
         android:title="Logout"/>
+
 </menu>

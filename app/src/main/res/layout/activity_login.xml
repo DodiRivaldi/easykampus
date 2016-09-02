@@ -88,7 +88,7 @@
             android:id="@+id/btn_signup"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dip"
+            android:layout_marginTop="4dip"
             android:background="@null"
             android:text="Belum terdaftar? Daftar sekarang!"
             android:textAllCaps="false"
