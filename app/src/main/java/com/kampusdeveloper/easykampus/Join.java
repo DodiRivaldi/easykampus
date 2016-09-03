@@ -1,58 +1,33 @@
-package com.kampusdeveloper.easykampus.fragment;
+package com.kampusdeveloper.easykampus;
 
 import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.graphics.Bitmap;
-import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.v4.app.Fragment;
 import android.support.v7.app.AlertDialog;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
+import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
 import android.webkit.WebChromeClient;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 
-import com.kampusdeveloper.easykampus.R;
+public class Join extends AppCompatActivity {
 
-public class News extends Fragment {
     private WebView webView;
     private ProgressDialog progressDialog;
-    public News() {
-        // Required empty public constructor
-    }
-
     @Override
-    public void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-    }
-
-    @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        View v = inflater.inflate(R.layout.fragment_news, container, false);
-        webView = (WebView) v.findViewById(R.id.webView1);
-        FloatingActionButton fab = (FloatingActionButton) v.findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                webView.loadUrl("https://easykampus.wordpress.com/");
-            }
-        });
+        setContentView(R.layout.activity_join);
+        webView = (WebView) findViewById(R.id.webView1);
 
         webView.setWebViewClient(new MyWebViewClient());
-        String url = "https://easykampus.wordpress.com/";
+        String url = "https://goo.gl/forms/YqRA4nZpgj9kSXc52";
         webView.getSettings().setJavaScriptEnabled(true);
         webView.getSettings().setJavaScriptCanOpenWindowsAutomatically(true);
         webView.getSettings().setSupportMultipleWindows(true);
         webView.setWebChromeClient(new WebChromeClient());
         webView.loadUrl(url);
-
-        return v;
     }
-
 
     private class MyWebViewClient extends WebViewClient {
 
@@ -65,9 +40,8 @@ public class News extends Fragment {
         @Override
         public void onPageStarted(WebView view, String url, Bitmap favicon) {
             super.onPageStarted(view, url, favicon);
-            progressDialog = new ProgressDialog(getContext());
-            progressDialog.setTitle("Memuat data");
-            progressDialog.setMessage("Harap tunggu...");
+            progressDialog = new ProgressDialog(Join.this);
+            progressDialog.setMessage("Menghubungkan...");
             progressDialog.show();
         }
 
@@ -90,7 +64,7 @@ public class News extends Fragment {
             }
 
             webView.loadUrl("about:blank");
-            AlertDialog alertDialog = new AlertDialog.Builder(getContext()).create();
+            AlertDialog alertDialog = new AlertDialog.Builder(Join.this).create();
             alertDialog.setTitle("Terjadi kesalahan");
             alertDialog.setMessage("Tidak dapat terhubung ke server, periksa koneksi internet anda.");
             alertDialog.setButton(DialogInterface.BUTTON_POSITIVE, "Coba lagi", new DialogInterface.OnClickListener() {

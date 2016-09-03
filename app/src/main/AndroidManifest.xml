@@ -3,6 +3,7 @@
     package="com.kampusdeveloper.easykampus">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.CALL_PHONE" />
     <!-- To auto-complete the email text field in the login form with the user's emails -->
     <uses-permission android:name="android.permission.GET_ACCOUNTS" />
@@ -49,15 +50,19 @@
             </intent-filter>
         </service>
 
-        <activity
-            android:name=".Akun"
-            android:label="@string/title_activity_akun"
-            android:theme="@style/MyMaterialTheme"></activity>
         <intent-filter>
             <action android:name="android.intent.action.SEND" />
+
             <category android:name="android.intent.category.DEFAULT" />
+
             <data android:mimeType="image/*" />
         </intent-filter>
+
+        <activity android:name=".Join" />
+        <activity
+            android:name=".About"
+            android:label="@string/title_activity_about"
+            android:theme="@style/MyMaterialTheme"></activity>
     </application>
 
 </manifest>

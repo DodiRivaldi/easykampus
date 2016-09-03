@@ -11,19 +11,16 @@ import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.ShareActionProvider;
 import android.support.v7.widget.Toolbar;
-import android.text.Html;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
-import android.view.View;
 import android.widget.ProgressBar;
-import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
-import com.kampusdeveloper.easykampus.fragment.Ulasan;
 import com.kampusdeveloper.easykampus.fragment.Kontak;
 import com.kampusdeveloper.easykampus.fragment.News;
+import com.kampusdeveloper.easykampus.fragment.Ulasan;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -32,10 +29,12 @@ public class MainActivity extends AppCompatActivity {
     private Toolbar toolbar;
     private TabLayout tabLayout;
     private ViewPager viewPager;
-    private FirebaseAuth.AuthStateListener authListener;
-    private FirebaseAuth auth;
+
     private ProgressBar progressBar;
     private ShareActionProvider mShareActionProvider;
+
+    private FirebaseAuth.AuthStateListener authListener;
+    private FirebaseAuth auth;
     /*private int[] tabIcons = {
             R.drawable.ic_near_me_white_24dp,
             R.drawable.ic_phone_white_24dp,
@@ -56,8 +55,6 @@ public class MainActivity extends AppCompatActivity {
 
         tabLayout = (TabLayout) findViewById(R.id.tabs);
         tabLayout.setupWithViewPager(viewPager);
-        //
-        // setupTabIcons();
 
         //get firebase auth instance
         auth = FirebaseAuth.getInstance();
@@ -77,13 +74,8 @@ public class MainActivity extends AppCompatActivity {
             }
         };
 
-        progressBar = (ProgressBar) findViewById(R.id.progressBar);
-
-        if (progressBar != null) {
-            progressBar.setVisibility(View.GONE);
-        }
-
     }
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -103,22 +95,28 @@ public class MainActivity extends AppCompatActivity {
         switch (item.getItemId()) {
             // action with ID action_refresh was selected
             case R.id.action_akun :
-                auth.signOut();
+                FirebaseAuth.getInstance().signOut();
                 startActivity(new Intent(MainActivity.this, Login.class));
                 break;
 
             case R.id.action_refresh:
-                Intent sharingIntent = new Intent(Intent.ACTION_SEND);
-                sharingIntent.setType("text/html");
-                sharingIntent.putExtra(android.content.Intent.EXTRA_TEXT, Html.fromHtml("<p>This is the text that will be shared.</p>"));
-                startActivity(Intent.createChooser(sharingIntent,"Share using"));
+                Intent share = new Intent(android.content.Intent.ACTION_SEND);
+                share.setType("text/plain");
+                share.addFlags(Intent.FLAG_ACTIVITY_CLEAR_WHEN_TASK_RESET);
+
+                // Add data to the intent, the receiving app will decide
+                // what to do with it.
+                share.putExtra(Intent.EXTRA_SUBJECT, "Title Of The Post");
+                share.putExtra(Intent.EXTRA_TEXT, "http://www.codeofaninja.com");
+
+                startActivity(Intent.createChooser(share, "Share link!"));
                 break;
             // action with ID action_settings was selected
             case R.id.action_settings:
-                Toast.makeText(this, "Tentang", Toast.LENGTH_SHORT)
-                        .show();
+                startActivity(new Intent(MainActivity.this, About.class));
                 break;
-            default:
+            case R.id.action_join:
+                startActivity(new Intent(MainActivity.this, Join.class));
                 break;
         }
 
@@ -140,6 +138,20 @@ public class MainActivity extends AppCompatActivity {
         adapter.addFrag(new Kontak(), "Kontak");
         adapter.addFrag(new Ulasan(), "Ulasan");
         viewPager.setAdapter(adapter);
+    }
+
+    @Override
+    public void onStart() {
+        super.onStart();
+        auth.addAuthStateListener(authListener);
+    }
+
+    @Override
+    public void onStop() {
+        super.onStop();
+        if (authListener != null) {
+            auth.removeAuthStateListener(authListener);
+        }
     }
 
     class ViewPagerAdapter extends FragmentPagerAdapter {
@@ -170,19 +182,4 @@ public class MainActivity extends AppCompatActivity {
             return mFragmentTitleList.get(position);
         }
     }
-
-    @Override
-    public void onStart() {
-        super.onStart();
-        auth.addAuthStateListener(authListener);
-    }
-
-    @Override
-    public void onStop() {
-        super.onStop();
-        if (authListener != null) {
-            auth.removeAuthStateListener(authListener);
-        }
-    }
-
 }

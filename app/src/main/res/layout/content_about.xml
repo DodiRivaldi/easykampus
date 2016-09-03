@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:orientation="vertical"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.kampusdeveloper.easykampus.About"
+    tools:showIn="@layout/activity_about">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <android.support.v7.widget.CardView
+            xmlns:card_view="http://schemas.android.com/apk/res-auto"
+            android:layout_gravity="center"
+            android:layout_width="fill_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="30dp"
+            card_view:cardCornerRadius="4dp"
+            >
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+            <TextView
+                android:layout_gravity="fill_horizontal"
+                android:text="Easy Kampus :"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+               />
+            <TextView
+                android:layout_gravity="fill_horizontal"
+                android:text="Aplikasi Easy Kampus adalah aplikasi untuk membantu anda mendapatkan informasi serta data - data kampus Universitas Pamulang secara real time.
+Dalam aplikasi ini anda akan mendapatkan informasi - informasi terkait kampus khususnya Fakultas Teknik Informatika (saat ini).
+Easy Kampus merupakan aplikasi Un - Official Universitas Pamulang.
+Aplikasi ini membutuhkan koneksi internet untuk menampilkan berita, notifikasi, dan beberapa konten lainnya."
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+            <TextView
+                android:layout_gravity="fill_horizontal"
+                android:text="Fitur aplikasi :"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+               />
+            <TextView
+                android:layout_gravity="fill_horizontal"
+                android:text="1. Update : Mendapatkan informasi kampus serta hal - hal terkait lainnya secara akurat dan real time."
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+               />
+            <TextView
+                android:layout_gravity="fill_horizontal"
+                android:text="2. Kontak : Menghubungi Dosen serta jajaran struktural kampus melalaui telp, whatsapp maupun sms."
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+               />
+            <TextView
+                android:layout_gravity="fill_horizontal"
+                android:text="3. Ulasan : Memberika review terhadap dosen yang diharapkan dapat meningkatkan kinerja dosen tersebut."
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+               />
+            <TextView
+                android:layout_gravity="fill_horizontal"
+                android:text="4. Serta fitur - fitur menarik lainnya yang akan hadir."
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+               />
+            <TextView
+                android:layout_gravity="fill_horizontal"
+                android:text="Tim pengembang : "
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+               />
+            <TextView
+                android:layout_gravity="fill_horizontal"
+                android:text="Aplikasi ini dikembangkan oleh tim 'Developer Kampus' yang beranggotakan mahasiswa semester 7 Universitas Pamulang Fakultas Teknik, Program Studi Teknik Informatika"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+               />
+            <TextView
+                android:layout_gravity="fill_horizontal"
+                android:text="1. Dodi Rivaldi (Android developer)"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+               />
+            <TextView
+                android:layout_gravity="fill_horizontal"
+                android:text="2. Aang (Backend developer)"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+               />
+            <TextView
+                android:layout_gravity="fill_horizontal"
+                android:text="3. Chandra Hermawan (Backend developer)"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+               />
+            <TextView
+                android:layout_gravity="fill_horizontal"
+                android:text="4. Dovel Pirmanto (Design)"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+               />
+            <TextView
+                android:layout_gravity="fill_horizontal"
+                android:text="Kami mengajak anda bergabung bersama membangun generasi muda kreatif, produktif dan bermanfaat bagi sesama."
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+               />
+
+        </LinearLayout>
+        </android.support.v7.widget.CardView>
+    </LinearLayout>
+    </ScrollView>
+</LinearLayout>

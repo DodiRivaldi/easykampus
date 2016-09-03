@@ -15,9 +15,18 @@
 
     <item
         android:id="@+id/action_settings"
-        android:title="Tentang"/>
+        android:title="Tentang"
+        android:orderInCategory="200"
+        />
+    <item
+        android:id="@+id/action_join"
+        android:title="Join with us"
+        android:orderInCategory="300"
+        app:showAsAction="ifRoom"/>
     <item
         android:id="@+id/action_akun"
-        android:title="Logout"/>
+        android:title="Logout"
+        android:orderInCategory="400"
+        />
 
 </menu>
