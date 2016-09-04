@@ -1,20 +1,45 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".fragment.Ulasan">
+    android:orientation="horizontal" >
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="AKUN"
-        android:textSize="40dp"
-        android:textStyle="bold"
-        android:layout_centerInParent="true"/>
-    <Button
-        android:layout_width="wrap_content"
-        android:id="@+id/btn"
-        android:layout_height="wrap_content"
-        android:text="Dialog"/>
+    <ImageView
+        android:id="@+id/image"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:padding="5dp" />
 
-</RelativeLayout>
+    <LinearLayout android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tv_nama_google"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Medium Text"
+            android:textStyle="bold"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="20dp"
+            android:padding="2dp"/>
+        <ImageView
+            android:id="@+id/image_konten"
+            android:layout_width="wrap_content"
+            android:paddingRight="60dp"
+            android:layout_height="wrap_content"
+            android:adjustViewBounds="true"
+            android:paddingTop="20dp"
+            android:src="@drawable/kampus"/>
+
+        <TextView
+            android:id="@+id/tv_emailgoogle"
+            android:layout_width="wrap_content"
+            android:paddingRight="80dp"
+            android:paddingTop="10dp"
+            android:layout_height="wrap_content"
+            android:text="Hello  friends,  in this tutorial I am going to share  with you How to create chat Application  using Firebase. Before starting the tutorial we have to know little About Firebase.  It is a Cloud Service Provider  and Backend service company based on California . This is  best alternative to parse for new App  for hosting as  we know parse is going to retire soon. Another great importance of  Firebase is it works also in offline, though in terms of performance  Parse works better  with large relationship base Database. But another  drawback of Firebase is does not support push notification. Let’s Checkout How to create simple Chat Application using Firebase."
+            />
+    </LinearLayout>
+</LinearLayout>

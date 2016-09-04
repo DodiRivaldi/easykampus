@@ -20,4 +20,5 @@
     </string>
     <string name="title_activity_akun">Akun</string>
     <string name="title_activity_about">About</string>
+    <string name="title_activity_search_kontak">SearchKontak</string>
 </resources>

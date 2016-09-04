@@ -62,6 +62,10 @@
         <activity
             android:name=".About"
             android:label="@string/title_activity_about"
+            android:theme="@style/MyMaterialTheme" />
+        <activity
+            android:name=".SearchKontak"
+            android:label="@string/title_activity_search_kontak"
             android:theme="@style/MyMaterialTheme"></activity>
     </application>
 

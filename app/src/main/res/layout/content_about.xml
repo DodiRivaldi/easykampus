@@ -21,39 +21,35 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-        <android.support.v7.widget.CardView
-            xmlns:card_view="http://schemas.android.com/apk/res-auto"
-            android:layout_gravity="center"
-            android:layout_width="fill_parent"
-            android:layout_height="match_parent"
-            android:layout_marginTop="30dp"
-            card_view:cardCornerRadius="4dp"
-            >
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
 
             <TextView
-                android:layout_gravity="fill_horizontal"
-                android:text="Easy Kampus :"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-               />
-            <TextView
-                android:layout_gravity="fill_horizontal"
-                android:text="Aplikasi Easy Kampus adalah aplikasi untuk membantu anda mendapatkan informasi serta data - data kampus Universitas Pamulang secara real time.
-Dalam aplikasi ini anda akan mendapatkan informasi - informasi terkait kampus khususnya Fakultas Teknik Informatika (saat ini).
-Easy Kampus merupakan aplikasi Un - Official Universitas Pamulang.
-Aplikasi ini membutuhkan koneksi internet untuk menampilkan berita, notifikasi, dan beberapa konten lainnya."
-                android:layout_width="match_parent"
+                android:text="Aplikasi Easy Kampus adalah aplikasi untuk membantu anda mendapatkan informasi serta data - data kampus Universitas Pamulang secara real time."
+                android:layout_width="fill_parent"
                 android:layout_height="match_parent" />
             <TextView
+                android:paddingTop="10dp"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="Dalam aplikasi ini anda akan mendapatkan informasi - informasi terkait kampus khususnya Fakultas Teknik Informatika (saat ini)."/>
+
+        <TextView
+            android:paddingTop="10dp"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="Easy Kampus merupakan aplikasi Un - Official Universitas Pamulang."/>
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="Aplikasi ini membutuhkan koneksi internet untuk menampilkan berita, notifikasi, dan beberapa konten lainnya."
+            android:paddingTop="10dp"/>
+        <TextView
                 android:layout_gravity="fill_horizontal"
                 android:text="Fitur aplikasi :"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-               />
+                android:paddingTop="10dp"
+            />
             <TextView
                 android:layout_gravity="fill_horizontal"
                 android:text="1. Update : Mendapatkan informasi kampus serta hal - hal terkait lainnya secara akurat dan real time."
@@ -68,7 +64,7 @@ Aplikasi ini membutuhkan koneksi internet untuk menampilkan berita, notifikasi, 
                />
             <TextView
                 android:layout_gravity="fill_horizontal"
-                android:text="3. Ulasan : Memberika review terhadap dosen yang diharapkan dapat meningkatkan kinerja dosen tersebut."
+                android:text="3. Kontribusi : Anda dapat beragi informasi kepada sesama melalui fitur ini"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                />
@@ -83,6 +79,7 @@ Aplikasi ini membutuhkan koneksi internet untuk menampilkan berita, notifikasi, 
                 android:text="Tim pengembang : "
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:paddingTop="10dp"
                />
             <TextView
                 android:layout_gravity="fill_horizontal"
@@ -119,10 +116,18 @@ Aplikasi ini membutuhkan koneksi internet untuk menampilkan berita, notifikasi, 
                 android:text="Kami mengajak anda bergabung bersama membangun generasi muda kreatif, produktif dan bermanfaat bagi sesama."
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:paddingTop="10dp"
                />
-
-        </LinearLayout>
-        </android.support.v7.widget.CardView>
-    </LinearLayout>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingTop="10dp"
+                android:text="Salam"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingTop="30dp"
+            android:text="Easy Kampus by Developer Kampus"/>
+       </LinearLayout>
     </ScrollView>
 </LinearLayout>

@@ -1,6 +1,7 @@
 package com.kampusdeveloper.easykampus;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.TabLayout;
@@ -11,6 +12,7 @@ import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.ShareActionProvider;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -29,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
     private Toolbar toolbar;
     private TabLayout tabLayout;
     private ViewPager viewPager;
-
+    private static final String TAG = "Main";
     private ProgressBar progressBar;
     private ShareActionProvider mShareActionProvider;
 
@@ -70,6 +72,18 @@ public class MainActivity extends AppCompatActivity {
                     // user auth state is changed - user is null
                     // launch login activity
                     startActivity(new Intent(MainActivity.this, Login.class));
+                }
+                else if (user != null) {
+                    // Name, email address, and profile photo Url
+                    String name = user.getDisplayName();
+                    String email = user.getEmail();
+                    Uri photoUrl = user.getPhotoUrl();
+
+                    // The user's ID, unique to the Firebase project. Do NOT use this value to
+                    // authenticate with your backend server, if you have one. Use
+                    // FirebaseUser.getToken() instead.
+                    String uid = user.getUid();
+                    Log.d(TAG,"Nama "+name);
                 }
             }
         };
@@ -136,7 +150,7 @@ public class MainActivity extends AppCompatActivity {
         ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager());
         adapter.addFrag(new News(), "Update");
         adapter.addFrag(new Kontak(), "Kontak");
-        adapter.addFrag(new Ulasan(), "Ulasan");
+        adapter.addFrag(new Ulasan(), "Kontribusi");
         viewPager.setAdapter(adapter);
     }
 

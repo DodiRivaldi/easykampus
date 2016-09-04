@@ -23,6 +23,7 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.GoogleAuthProvider;
+import com.kampusdeveloper.easykampus.fragment.Ulasan;
 
 /**
  * A login screen that offers login via email/password.
@@ -82,7 +83,7 @@ public class Login extends AppCompatActivity implements
             FirebaseUser user = authResult.getUser();
             Toast.makeText(this, "Welcome " + user.getEmail(), Toast.LENGTH_SHORT).show();
             // Go back to the main activity
-            startActivity(new Intent(this, MainActivity.class));
+            startActivity(new Intent(this, Ulasan.class));
         }
     }
 
